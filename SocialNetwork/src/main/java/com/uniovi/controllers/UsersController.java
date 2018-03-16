@@ -1,7 +1,6 @@
 package com.uniovi.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -9,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.uniovi.entitites.User;
 import com.uniovi.services.SecurityService;
 import com.uniovi.services.UsersService;
 
@@ -51,10 +51,11 @@ public class UsersController {
 		return "signup";
 	}
 	
-	/*@RequestMapping(value="/signup", method = RequestMethod.POST)
+	
+	@RequestMapping(value="/signup", method = RequestMethod.POST)
 	public String signup(@ModelAttribute("user")User user, Model model) {
 		usersService.addUser(user);
 		securityService.autoLogin(user.getEmail(), user.getPasswordConfirm());
 		return "redirect:home";
-	}*/
+	}
 }
