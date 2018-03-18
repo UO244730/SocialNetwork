@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.yaml.snakeyaml.error.Mark;
 
-import com.uniovi.entitites.User;
+import com.uniovi.entities.User;
 
 @Service
 public class InsertSampleDataService {

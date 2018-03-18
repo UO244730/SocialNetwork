@@ -1,4 +1,4 @@
-package com.uniovi.entitites;
+package com.uniovi.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,8 +17,10 @@ public class User {
 	String name;
 	String email;
 	String password;
+	String role;
 	@Transient
 	String passwordConfirm;
+	
 	public User(Long id, String name, String email) {
 		super();
 		this.id=id;
@@ -52,6 +54,16 @@ public class User {
 	}
 	public String getPasswordConfirm() {
 		// TODO Auto-generated method stub
-		return getPasswordConfirm();
+		return passwordConfirm;
+	}
+	
+	public void setRole(String role) {
+		this.role = role;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 }
