@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Usuarios</title>
+<meta charset="utf-8" />
+</head>
+<body>
+	<div class="container">
+		<h1>List Thymeleaf</h1>
+		<div th:each="user : ${userList}">
+			<p>
+				<span th:text="${user.id}"></span> <span
+					th:text="${user.name}"></span> <span th:text="${user.email}"></span>
+				
+			</p>
+		</div>
+		<div th:if="${#lists.isEmpty(userList)}">No users</div>
+	</div>
+</body>
+</html>

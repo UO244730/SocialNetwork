@@ -30,14 +30,20 @@ public class UsersController {
 	@Autowired
 	private RolesService rolesService;
 	
-	@RequestMapping("/user/list")
+	/*@RequestMapping("/user/list")
 	public String getList() {
 		return usersService.getUsers().toString();
-	}
+	}*/
 	
 	@RequestMapping("/user/add")
 	public String setUser() {
 		return "Adding Mark";
+	}
+	
+	@RequestMapping("/user/list")
+	public String getList(Model model){
+	model.addAttribute("userList", usersService.getUsers() );
+	return "list";
 	}
 	
 	@RequestMapping("/user/details")
