@@ -7,11 +7,17 @@
 <body>
 	<div class="container">
 		<h1>List Thymeleaf</h1>
+		<form class="navbar-form" action="/user/list">
+			<div class="form-group">
+				<input name="searchText" type="text" class="form-control" size="50" placeholder="Buscar por email o nombre del usuario"></input>
+			</div>
+			<button type="submit" class="btn btn-default">Buscar</button>
+		</form>
 		<div th:each="user : ${userList}">
 			<p>
-				<span th:text="${user.id}"></span> <span
-					th:text="${user.name}"></span> <span th:text="${user.email}"></span>
-				
+				<span th:text="${user.id}"></span> <span th:text="${user.name}"></span>
+				<span th:text="${user.email}"></span>
+
 			</p>
 		</div>
 		<div th:if="${#lists.isEmpty(userList)}">No users</div>

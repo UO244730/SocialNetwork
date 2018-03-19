@@ -51,4 +51,11 @@ public class UsersService {
 		//return usersList.stream().filter(user -> user.getId().equals(id)).findFirst().get();
 		return usersRepository.findByEmail(email);
 	}
+	
+	
+	public List<User> searchUsersByEmailAndName (String searchText){
+		List<User> users = new ArrayList<User>();
+		users = usersRepository.searchByEmailandName(searchText);
+		return users;
+		}
 }
